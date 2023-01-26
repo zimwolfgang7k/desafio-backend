@@ -5,7 +5,7 @@ class Transaction(models.Model):
     class Meta:
         ordering = ["id"]
 
-    type = models.CharField(max_length=1)
+    type = models.CharField(max_length=10)
     date = models.DateField()
     value = models.DecimalField(max_digits=8, decimal_places=2)
     cpf = models.CharField(max_length=11)
