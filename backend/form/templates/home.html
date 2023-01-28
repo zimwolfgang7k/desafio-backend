@@ -4,16 +4,86 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: rgb(255, 236, 236);
+        padding: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
+        height: 100vh;
+        font-family: "Poppins";
+      }
+      form {
+        height: 250px;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(219, 219, 219);
+        border-radius: 5px;
+      }
+      .container {
+        height: 300px;
+        width: 250px;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .div-form {
+        height: 300px;
+        width: 300px;
+        background-color: rgb(143, 141, 141);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+      }
+      .form-input-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .form-input-button > input {
+        padding: 5px;
+        border: none;
+      }
+      .form-input-button > button {
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        width: 191px;
+        cursor: pointer;
+        background-color: rgb(106, 255, 106);
+        color: white;
+        font-size: 16px;
+      }
+    </style>
     <title>Formulary</title>
   </head>
   <body>
-    <form action="{% url 'response' %}" method="POST">
-      {% csrf_token %}
-      <div>
-        {{form}}
+    <div class="container">
+      <div class="div-form">
+        <form action="{% url 'response' %}" method="POST">
+          {% csrf_token %}
+          <div class="form-input-button">
+            {{form}}
 
-        <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   </body>
 </html>

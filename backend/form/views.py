@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import Form
-from rest_framework.views import Request, Response, status
+from transactions.models import Transaction
 
 
 def home(request):
@@ -35,7 +35,6 @@ def data_response(request):
     day = codeDataList[7:9]
     day_treated = "".join([str(elem) for elem in day])
     date = f"{year_treated}-{month_treated}-{day_treated}"
-    print(date)
 
     # getting value and treating it
 
@@ -83,8 +82,14 @@ def data_response(request):
     }
 
     form2 = Form(data)
+    database2 = Transaction.objects.get(id=1).store_name
+    print(database2)
 
     if form2.is_valid():
         form2.save()
 
-    return HttpResponse(f"{data}")
+    return render(
+        request,
+        "response.html",
+        {"formResult": data},
+    )
