@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: rgb(255, 236, 236);
+        font-family: "Poppins";
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        height: 100vh;
+        width: 100vw;
+      }
+      .list {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(106, 255, 106);
+        padding: 15px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        border: rgb(255, 35, 35) solid 1px;
+        border-radius: 10px;
+      }
+      li {
+        text-decoration: none;
+        list-style-type: none;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <title>Response</title>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="list">
+        <li id="type">Type: {{formResult.type}}</li>
+        <li id="value">Value: {{formResult.value}}</li>
+        <li id="store_owner">Store Owner: {{formResult.store_owner}}</li>
+        <li id="store_name">Store Name: {{formResult.store_name}}</li>
+        <li id="card">Card: {{formResult.card}}</li>
+        <li id="total">Total:R${{0.00}}</li>
+      </ul>
+    </div>
+  </body>
+</html>
